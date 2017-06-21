@@ -36,7 +36,9 @@ const hexes = g.append('g')
       .attr('d', hexbin.hexagon())
       .attr('transform', d => `translate(${d.x},${d.y})`)
       .attr('fill', d => color(d.length))
-      .style('opacity', 0.5);
+      .style('opacity', 0.5)
+      .style('stroke', '#000')
+      .style('stroke-width', '0.5px');
 
 window.setInterval(() => {
   const rand = Math.random() * 100;
