@@ -40,9 +40,8 @@ const hexes = g.append('g')
 
 window.setInterval(() => {
   const rand = Math.random() * 100;
-  hexes
-    .transition()
-      .duration(1000)
-      .delay((d, i) => 9 * i)
-      .attr('d', hexbin.hexagon(rand));
+  hexes.transition()
+    .duration(1000)
+    .delay((d, i) => 9 * i)
+    .attr('d', hexbin.hexagon(rand));
 }, 1000);
