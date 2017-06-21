@@ -1,6 +1,9 @@
 /* global d3 */
 
-const svg = d3.select('svg');
+const svg = d3.select('body').append('svg')
+  .attr('width', 960)
+  .attr('height', 600);
+
 const margin = { top: 20, right: 20, bottom: 30, left: 40 };
 const width = +svg.attr('width') - margin.left - margin.right;
 const height = +svg.attr('height') - margin.top - margin.bottom;
