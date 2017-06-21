@@ -10,6 +10,8 @@ const height = +svg.attr('height') - margin.top - margin.bottom;
 const g = svg.append('g')
   .attr('transform', `translate(${margin.left},${margin.top})`);
 
+const p5 = new window.p5();
+
 const randomX = d3.randomNormal(width / 2, 80);
 const randomY = d3.randomNormal(height / 2, 80);
 const points = d3.range(2000).map(() => [randomX(), randomY()]);
@@ -43,8 +45,10 @@ const hexes = g.append('g')
       .style('stroke', '#000')
       .style('stroke-width', '0.5px');
 
+
 window.setInterval(() => {
-  const rand = Math.random() * 100;
+  const xoff = 0.0;
+  const rand = noise(xoff) * 100;
   hexes.transition()
     .duration(1000)
     .delay((d, i) => 9 * i)
