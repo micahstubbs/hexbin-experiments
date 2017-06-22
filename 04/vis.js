@@ -46,8 +46,10 @@ const hexes = g.append('g')
       .style('stroke-width', '0.5px');
 
 
+let xoff = 0;
 window.setInterval(() => {
-  const rand = noise(Math.random()) * 100;
+  xoff = xoff + .05;
+  const rand = noise(xoff) * 100;
   hexes.transition()
     .duration(1000)
     .delay((d, i) => 9 * i)
