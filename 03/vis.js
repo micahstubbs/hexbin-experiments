@@ -47,8 +47,8 @@ const hexes = g.append('g')
 
 
 window.setInterval(() => {
-  const xoff = 0.0;
-  const rand = noise(xoff) * 100;
+  const rand = noise(Math.random()) * 100;
+  console.log('rand', rand)
   hexes.transition()
     .duration(1000)
     .delay((d, i) => 9 * i)
